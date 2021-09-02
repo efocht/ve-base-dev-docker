@@ -1,0 +1,18 @@
+[ef-extra]
+name=Aurora TSUBASA EF Extra
+baseurl=https://sx-aurora.com/repos/veos/ef_extra
+gpgcheck=0
+enabled=1
+
+[llvm]
+name=Aurora TSUBASA LLVM
+baseurl=https://sx-aurora.com/repos/llvm
+gpgcheck=0
+enabled=1
+
+[veos-rhel83]
+name=Aurora VEOS RHEL specific
+baseurl=https://sx-aurora.com/repos/veos/RHEL8.3
+gpgcheck=1
+enabled=1
+
