@@ -19,7 +19,8 @@ RUN             yum -y install \
                     binutils gcc-toolset-10 gcc-toolset-10-libstdc++-devel \
                     python39 python39-devel python39-pip \
                     bison cmake elfutils-libelf-devel git glibc \
-                    libarchive libgcc libstdc++ libxml2 make unzip vim wget ; \
+                    libarchive libgcc libstdc++ libxml2 ncurses-devel \
+                    make unzip vim wget ; \
                 yum clean all ; rm -rf /var/cache/yum/* ; \
                 ln -s /usr/lib64/libstdc++.so.6 /usr/lib64/libstdc++.so
 
