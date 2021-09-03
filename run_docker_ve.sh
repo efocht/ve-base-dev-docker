@@ -3,8 +3,8 @@
 VENODEID=${VE_NODE_NUMBER:-0}
 VE=$(readlink -f /dev/veslot$VENODEID)
 docker run -it --rm \
-    -v $VE:$VE \
     -v /dev:/dev:z \
+    --device $VE:$VE \
     -v /var/opt/nec/ve/veos:/var/opt/nec/ve/veos:z \
     -v $HOME:$HOME:z \
     -v /etc/passwd:/etc/passwd:ro \
