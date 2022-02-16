@@ -8,6 +8,7 @@ ADD             CentOS-AppStream.repo /etc/yum.repos.d
 ADD             https://sxauroratsubasa.sakura.ne.jp/repos/TSUBASA-soft-release-2.3-1.noarch.rpm /tmp
 ADD             TSUBASA-repo.repo /tmp
 ADD             sxaurora.repo /tmp
+ADD             entrypoint.sh /
 ARG             RELEASE_RPM=/tmp/TSUBASA-soft-release-*.noarch.rpm
 
 # Install GPG keys etc...
@@ -34,4 +35,5 @@ RUN             yum -y install \
                 yum clean all ; rm -rf /var/cache/yum/*
 
 #ENV            LOG4C_RCPATH=/etc/opt/nec/ve/veos
+ENTRYPOINT      ["/entrypoint.sh"]
 CMD             ["/bin/bash"]
