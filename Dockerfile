@@ -1,10 +1,11 @@
-FROM            centos:8.3.2011
+FROM            centos:8.4.2105
 MAINTAINER      efocht
 ADD             dnf.conf /etc/dnf
+RUN             rm -f /etc/yum.repos.d/*
 ADD             CentOS-Base.repo /etc/yum.repos.d
 ADD             CentOS-Extras.repo /etc/yum.repos.d
 ADD             CentOS-AppStream.repo /etc/yum.repos.d
-ADD             https://www.hpc.nec/repos/TSUBASA-soft-release-2.3-1.noarch.rpm /tmp
+ADD             https://sxauroratsubasa.sakura.ne.jp/repos/TSUBASA-soft-release-2.3-1.noarch.rpm /tmp
 ADD             TSUBASA-repo.repo /tmp
 ADD             sxaurora.repo /tmp
 ARG             RELEASE_RPM=/tmp/TSUBASA-soft-release-*.noarch.rpm
