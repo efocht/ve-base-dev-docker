@@ -2,11 +2,11 @@
 name=Aurora TSUBASA EF Extra
 baseurl=https://sx-aurora.com/repos/veos/ef_extra
 gpgcheck=0
-enabled=0
+enabled=1
 
 [llvm]
 name=Aurora TSUBASA LLVM
 baseurl=https://sx-aurora.com/repos/llvm-el8
 gpgcheck=0
-enabled=0
+enabled=1
 
