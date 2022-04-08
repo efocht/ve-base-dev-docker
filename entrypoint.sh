@@ -9,9 +9,10 @@ if [ -n "$CURR_UID" -a -n "$CURR_GID" -a -n "$CURR_UNAME" -a -n "$CURR_GNAME" -a
     fi
     if ! id -g $CURR_UID >/dev/null 2>&1 ; then
 	[ -d "$(dirname $CURR_HOME)" ] || mkdir -p "$(dirname $CURR_HOME)"
-	useradd -u $CURR_UID -g $CURR_GID -d "$CURR_HOME" $CURR_UNAME
+	useradd -u $CURR_UID -g $CURR_GID -d "$CURR_HOME" -M $CURR_UNAME
     fi
     rm -f /etc/security/limits.d/10-veos.conf
-    exec /usr/sbin/runuser -l $CURR_UNAME -c "$@"
+    /usr/sbin/runuser -u $CURR_UNAME "$@"
+else
+    $@
 fi
-$@

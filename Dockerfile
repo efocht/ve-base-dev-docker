@@ -32,6 +32,7 @@ RUN             yum -y install \
                     aurlic-lib binutils-ve glibc-ve glibc-ve-devel kheaders-ve \
                     veoffload-aveo-devel veoffload-aveorun-devel veos-devel \
                     veosinfo-devel veos-headers veos-libvepseudo-headers; \
+                ldconfig; \
                 yum clean all ; rm -rf /var/cache/yum/*
 
 #ENV            LOG4C_RCPATH=/etc/opt/nec/ve/veos
